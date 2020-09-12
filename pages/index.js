@@ -27,22 +27,21 @@ export default function Home({ pokemons }) {
       </div>
 
       <ul>
-        
-          <Link href="/">
-            <a>Home</a>
-          </Link>
-          <br />
-          <Link href="/sobre">
-            <a>Sobre</a>
-          </Link>
-        
+        <Link href="/">
+          <a>Home</a>
+        </Link>
+        <br />
+        <Link href="/sobre">
+          <a>Sobre</a>
+        </Link>
       </ul>
-
 
       <ul>
         {pokemons.map((pokemon) => (
           <li key={pokemon.entry_number}>
-            {pokemon.pokemon_species.name}
+            <Link href={`/pokemon/${pokemon.entry_number}`}>
+              <a>{pokemon.pokemon_species.name}</a>
+            </Link>
           </li>
         ))}
       </ul>
